@@ -1,6 +1,15 @@
 TictactoeApp::Application.routes.draw do
+  #get "tictactoe/index"
+  root to: 'tictactoe#index'
+
+  get "tictactoe/show"
+
+  get "tictactoe/new"
+
+  get "tictactoe/update"
+
   #get "static_pages/home"
-  root to: 'static_pages#home'
+  #root to: 'static_pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
