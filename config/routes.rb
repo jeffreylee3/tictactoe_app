@@ -1,11 +1,17 @@
 TictactoeApp::Application.routes.draw do
+  #get "players/new"
+  #get "players/show"
+  resources :players
+
+
   #get "tictactoe/index"
   root to: 'tictactoe#index'
 
-  get "tictactoe/show"
-
-  get "tictactoe/new"
-
+  #get "tictactoe/show"
+  match '/game', to: 'tictactoe#show'
+  match '/new_game', to: 'tictactoe#new'
+  #get "tictactoe/new"
+  #match '/update_game', to: 'tictactoe#update'
   get "tictactoe/update"
 
   #get "static_pages/home"

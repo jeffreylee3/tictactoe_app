@@ -6,6 +6,7 @@ class TictactoeController < ApplicationController
   end
 
   def new
+
   end
 
   def update
