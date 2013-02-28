@@ -1,0 +1,21 @@
+<div class="center hero-unit">
+  <h1>Edit Page</h1>
+
+	</br>
+  <h2>ID, Square values</h2>
+  <%= @tictactoe.id %>, <%= @tictactoe.squares %>
+  </br>
+
+
+
+  </br>
+  <%= form_for(@tictactoe) do |f| %>        
+    <%= f.label :squares %>  
+    <%= f.text_field :squares %>
+    <%= f.submit "Submit button", class: "btn btn-large btn-primary" %>
+  <% end %>
+
+  </br>
+  <%= link_to "All games", tictactoes_path, class: "btn btn-large btn-primary" %>
+
+</div>

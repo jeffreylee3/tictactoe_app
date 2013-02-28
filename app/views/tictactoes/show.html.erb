@@ -1,0 +1,19 @@
+<div class="center hero-unit">
+  <h1>Show Page</h1>
+
+
+
+  <%= @tictactoe.id %>, <%= @tictactoe.squares %>
+  </br>
+
+  <% 9.times do |n| %>
+      <% @tictactoe.squares[n] = n %>
+  <% end %>
+
+  <%= @tictactoe.id %>, <%= @tictactoe.squares %>
+
+  </br>
+
+  <%= link_to "All games", tictactoes_path, class: "btn btn-large btn-primary" %>
+
+</div>

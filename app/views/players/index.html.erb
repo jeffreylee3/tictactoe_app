@@ -1,0 +1,9 @@
+<h1>All users</h1>
+
+<ul>
+  <% @players.each do |player| %>
+    <li>
+		  <%= player.name %>, <%= player.mark %>
+    </li>
+  <% end %>
+</ul>
