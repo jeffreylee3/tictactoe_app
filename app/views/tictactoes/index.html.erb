@@ -3,7 +3,10 @@
 <ul>
   <% @tictactoes.each do |tictactoe| %>
     <li>
-		  <%= tictactoe.id %>, <%= tictactoe.squares %>
+		  <strong>Game ID:</strong>       <%= tictactoe.id %>, 
+		  <strong>Game Board:</strong>    <%= tictactoe.squares %>, 
+		  <strong>Game Players:</strong>  <%= tictactoe.players.count %>, 
+		  <strong>PLayer Info:</strong>   <%= players_info(tictactoe.players) %>
     </li>
   <% end %>
 </ul>

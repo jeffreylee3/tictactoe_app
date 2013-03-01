@@ -1,9 +1,10 @@
 <div class="center hero-unit">
-	<h1>Create page</h1>
-
-  <%= link_to "Show games", tictactoes_path, class: "btn btn-large btn-primary" %>
+	<h1>Welcome to Tic Tac Toe!</h1>
 
 
+	<%= form_for(@tictactoe) do |f| %>        
+	  <%= f.submit "Start Game!", class: "btn btn-large btn-primary" %>
+	<% end %>
 
 
 </div>

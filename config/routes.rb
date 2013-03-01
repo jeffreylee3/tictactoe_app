@@ -1,23 +1,27 @@
 TictactoeApp::Application.routes.draw do
-  #get "players/new"
-  #get "players/show"
+
   resources :players, only: [:new, :show, :create, :destroy, :index]
   resources :tictactoes
 
+  root to: 'tictactoes#new'
+
+
+
+  #root to: 'static_pages#home'  
   #get "tictactoe/index"
-  root to: 'static_pages#home'
-
   #get "tictactoe/show"
-  
   #match '/game', to: 'tictactoe#show'
-
-  
+  #get "players/new"
+  #get "players/show"  
   #get "tictactoe/new"
   #match '/update_game', to: 'tictactoe#update'
   # get "tictactoe/update"
-
   #get "static_pages/home"
   #root to: 'static_pages#home'
+
+
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
