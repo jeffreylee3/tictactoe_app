@@ -22,7 +22,7 @@ class TictactoesController < ApplicationController
   def update
     @tictactoe = Tictactoe.find(params[:id])
     @tictactoe.update_attributes(params[:tictactoe]) #includes db save (@tictactoe.save)
-    redirect_to tictactoes_path
+    redirect_to edit_tictacto_path(1) #have this part of an if statement, if winner,draw go here, else back to edit page, make constant val to curr board
   end
 
   def edit

@@ -1,6 +1,6 @@
 TictactoeApp::Application.routes.draw do
 
-  resources :players, only: [:new, :show, :create, :destroy, :index]
+  resources :players
   resources :tictactoes
 
   root to: 'tictactoes#new'

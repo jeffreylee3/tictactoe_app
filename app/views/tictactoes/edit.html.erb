@@ -1,22 +1,29 @@
 <div class="center hero-unit">
   <h1>Edit Page</h1>
 
-	</br>
-  <h2>ID, Square values</h2>
-  <%= @tictactoe.id %>, <%= @tictactoe.squares %>
-  </br>
 
-  
-
-
-  </br>
-  <%= form_for(@tictactoe) do |f| %>        
-    <%= f.label :squares %>  
-    <%= f.text_field :squares %>
-    <%= f.submit "Submit button", class: "btn btn-large btn-primary" %>
-  <% end %>
-
-  </br>
-  <%= link_to "All games", tictactoes_path, class: "btn btn-large btn-primary" %>
+  <div class="row">
+    <div class="span4 offset1">
+      </br>
+      <strong>Turn:</strong>
+      </br>
+      <strong>Player 1: name, moves</strong>
+      </br>
+      <strong>Player 2: name, moves</strong>
+    </div>
+    <div class="span4 offset4">
+    	</br>
+      <strong>ID, Square values:</strong>
+      <%= @tictactoe.id %>, <%= @tictactoe.squares %>
+      </br>
+      </br>
+      <%= form_for(@tictactoe) do |f| %>         
+        <%= f.text_field :squares %>
+        <%= f.submit "Submit button", class: "btn btn-large btn-primary" %>
+      <% end %>
+      </br>
+      <%= link_to "All games", tictactoes_path, class: "btn btn-large btn-primary" %>
+    </div>
+  </div>
 
 </div>
