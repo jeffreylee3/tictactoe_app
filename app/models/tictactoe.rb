@@ -1,7 +1,8 @@
 class Tictactoe < ActiveRecord::Base
-  attr_accessible :squares # allows mass assignment, and use of update_attributes
-  serialize :squares # allows for array structure
+  #attr_accessible :squares # allows mass assignment, and use of update_attributes
+  #serialize :squares # allows for array structure
   has_many :players
+  has_many :squares
 
 
   def winner?(curr_player_moves)

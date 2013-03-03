@@ -1,0 +1,12 @@
+<div class="center hero-unit">
+	<h1>Squares New</h1>
+
+  <%= form_for([@tictactoe, @square]) do |f| %>        
+          
+    <%= f.label :num %>  
+    <%= f.text_field :num %>
+
+    <%= f.submit "Create Square", class: "btn btn-large btn-primary" %>
+  <% end %>
+
+</div>

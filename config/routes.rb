@@ -1,12 +1,18 @@
 TictactoeApp::Application.routes.draw do
 
-  resources :players
-  resources :tictactoes
+
+  #resources :squares, only: [:new, :create]
+  #resources :players
+  
+  resources :tictactoes do
+    resources :squares
+    resources :players
+  end
 
   root to: 'tictactoes#new'
 
 
-
+  #get "squares/create"
   #root to: 'static_pages#home'  
   #get "tictactoe/index"
   #get "tictactoe/show"
