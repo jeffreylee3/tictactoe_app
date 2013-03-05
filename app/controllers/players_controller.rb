@@ -36,3 +36,8 @@ class PlayersController < ApplicationController
     @tictactoe = Tictactoe.find(params[:tictacto_id])
   end
 end
+
+
+#
+# initalize two players
+#

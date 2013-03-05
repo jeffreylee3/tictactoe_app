@@ -1,0 +1,29 @@
+<strong>Tictactoe id:</strong>
+<%= @tictactoe.id %>
+</br>
+<strong>Total Squares:</strong>
+<%= @tictactoe.squares.count %>
+</br>
+</br>
+
+
+
+
+<%= @tictactoe.squares[0].value %> , <%= @tictactoe.squares[1].value %> , <%= @tictactoe.squares[2].value %>
+</br>
+<%= @tictactoe.squares[3].value %> , <%= @tictactoe.squares[4].value %> , <%= @tictactoe.squares[5].value %>
+</br>
+<%= @tictactoe.squares[6].value %> , <%= @tictactoe.squares[7].value %> , <%= @tictactoe.squares[8].value %>
+
+
+<%= form_for(@tictactoe) do |f| %> 
+  <% c = 0 %> 
+  <%= f.fields_for :squares, @square do |e| %>
+    </br>
+    Square: <%= c %>
+    <%= e.text_field :value %>
+    <% c += 1 %>
+    <%= simple_format("") if c == 3 || c == 6 %>
+  <% end %>
+    <%= f.submit "Submit button", class: "btn btn-large btn-primary" %>
+<% end %>

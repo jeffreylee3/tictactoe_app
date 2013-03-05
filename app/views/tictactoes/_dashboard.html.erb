@@ -1,0 +1,21 @@
+<% players_info = p_info(@tictactoe) %>
+<% players_moves = p_moves(@tictactoe) %>
+<% open_squares = @tictactoe.open_squares(players_moves[0],players_moves[1]) %>
+
+
+</br>
+<strong>Player 1:</strong> <%= players_info[0] %> 
+<strong>Moves:</strong> <%= players_moves[0] %>
+</br>
+<strong>Player 2:</strong> <%= players_info[1] %>
+<strong>Moves:</strong> <%= players_moves[1] %>
+</br>
+<strong>Open squares:</strong>  <%= open_squares %>
+</br>
+<strong>Turn:</strong> <%= turn(@tictactoe.players, open_squares) %>
+</br>
+<strong>Player 1 winner:</strong> <%= @tictactoe.winner?(players_moves[0]) %>
+</br>
+<strong>Player 2 winner:</strong> <%= @tictactoe.winner?(players_moves[1]) %>
+</br>
+<strong>Draw:</strong> <%= @tictactoe.draw?(players_moves[0],players_moves[1]) %>

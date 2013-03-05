@@ -11,14 +11,17 @@ class SquaresController < ApplicationController
   	@square = @tictactoe.squares.build(params[:square])
   	@square.save
   	#only redirect if count value = 9 (9 squares)
-  	redirect_to new_tictacto_player_path(@tictactoe)
+  	if @tictactoe.squares.count == 9
+      redirect_to new_tictacto_player_path(@tictactoe) 
+    else
+      redirect_to new_tictacto_square_path(@tictactoe)
+    end
   end
 
 
   private
-
-  def get_tictactoe
-    @tictactoe = Tictactoe.find(params[:tictacto_id])
-  end
+    def get_tictactoe
+      @tictactoe = Tictactoe.find(params[:tictacto_id])
+    end
 
 end
