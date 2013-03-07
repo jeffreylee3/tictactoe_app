@@ -1,16 +1,4 @@
 module TictactoesHelper
-  def p_info(tictactoe)
-    players = Array.new
-    #return tictactoe_players.collect(&:name)[1]
-    #return tictactoe_players
-    #name = tictactoe_players.collect(&:name)[0]
-    players[0] = tictactoe.players[0].name  + ", " + tictactoe.players[0].mark
-    players[1] = tictactoe.players[1].name  + ", " + tictactoe.players[1].mark
-    #size = tictactoe_players.count
-    #mark = tictactoe_players.collect(&:mark)[0]
-
-    return players
-  end
 
   def p_moves(tictactoe)
     moves = Array.new
@@ -28,9 +16,33 @@ module TictactoesHelper
 
 
   def turn(tictactoe_players, moves_avail)
-    return tictactoe_players[0].name if moves_avail.length.odd? && tictactoe_players[0].first_to_act == "true"
-    return tictactoe_players[1].name if moves_avail.length.odd? && tictactoe_players[1].first_to_act == "true"
-    return tictactoe_players[0].name if moves_avail.length.even? && tictactoe_players[0].first_to_act == "false"
-    return tictactoe_players[1].name if moves_avail.length.even? && tictactoe_players[1].first_to_act == "false"
+    #return tictactoe_players[0].name if moves_avail.length.odd? && tictactoe_players[0].first_to_act == "true"
+    #return tictactoe_players[1].name if moves_avail.length.odd? && tictactoe_players[1].first_to_act == "true"
+    #return tictactoe_players[0].name if moves_avail.length.even? && tictactoe_players[0].first_to_act == "false"
+    #return tictactoe_players[1].name if moves_avail.length.even? && tictactoe_players[1].first_to_act == "false"
+  
+    return "Player 1" if moves_avail.length.odd? && tictactoe_players[0].first_to_act == "true"
+    return "Player 2" if moves_avail.length.odd? && tictactoe_players[1].first_to_act == "true"
+    return "Player 1" if moves_avail.length.even? && tictactoe_players[0].first_to_act == "false"
+    return "Player 2" if moves_avail.length.even? && tictactoe_players[1].first_to_act == "false"
   end
+
+  def return_image(tictactoe, num)
+    return "blank.jpg" if @tictactoe.squares[num].value == ""
+    return "x.jpg" if @tictactoe.squares[num].value == "X"
+    return "o.jpg" if @tictactoe.squares[num].value == "O"
+  end
+
+  def test(tictactoe, num)
+    tictactoe.squares[num].value = "X"
+  end
+
+  #delete, used for test table
+  def return_image2(square)
+    return "blank.jpg" if square == 0
+    return "x.jpg" if square == 1
+    return "o.jpg" if square == 2
+  end
+
+
 end
