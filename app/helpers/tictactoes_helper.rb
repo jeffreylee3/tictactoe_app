@@ -1,21 +1,16 @@
 module TictactoesHelper
 
-  def p_moves(tictactoe)
-    moves = Array.new
+  def p1_moves(tictactoe)
     p1_moves = Array.new
-    p2_moves = Array.new
-
-    tictactoe.squares.each do |n|
-      #p1_moves << n.num if n.value == tictactoe.players[0].mark
-      #p2_moves << n.num if n.value == tictactoe.players[1].mark
-      p1_moves << n.num if n.value == "X"
-      p2_moves << n.num if n.value == "O"
-    end
-    moves[0] = p1_moves.dup
-    moves[1] = p2_moves.dup
-    return moves
+    tictactoe.squares.each { |n| p1_moves << n.num if n.value == "X" }  
+    return p1_moves    
   end
 
+  def p2_moves(tictactoe)
+    p2_moves = Array.new
+    tictactoe.squares.each { |n| p2_moves << n.num if n.value == "O" }  
+    return p2_moves    
+  end
 
   def turn(tictactoe_players, moves_avail)
     return "Player 1" if moves_avail.length.odd?
@@ -33,6 +28,14 @@ module TictactoesHelper
     return "o.jpg" if @tictactoe.squares[num].value == "O"
   end
 
+  def p_winner(tictactoe)
+    return "Congratulations, Player 1! You Win!!" if tictactoe.winner?(p1_moves(tictactoe))
+    return "Congratulations, Player 2! You Win!!" if tictactoe.winner?(p2_moves(tictactoe))
+    return "Game ends in a draw." if tictactoe.draw?(p1_moves(tictactoe),p2_moves(tictactoe))
+  end
+
+
+  # delete
   def test(tictactoe, num)
     tictactoe.squares[num].value = "X"
   end

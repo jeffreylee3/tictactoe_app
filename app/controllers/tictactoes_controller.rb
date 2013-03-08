@@ -1,7 +1,9 @@
 class TictactoesController < ApplicationController
+  include TictactoesHelper
 
   def show
     @tictactoe = Tictactoe.find(params[:id])
+
   end
 
   def new  	
@@ -29,7 +31,16 @@ class TictactoesController < ApplicationController
     @tictactoe = Tictactoe.find(params[:id])
     @tictactoe.update_attributes(params[:tictactoe]) #includes db save
     
-    redirect_to edit_tictacto_path(@tictactoe) #have this part of an if statement, if winner,draw go here, else back to edit page, make constant val to curr board    
+    # if @tictactoe.result == Player 1 || Player 2 || Draw
+    # redirect to show page
+    # else
+    # redirect to edit page
+
+    if (@tictactoe.winner?(p1_moves(@tictactoe)) || @tictactoe.winner?(p2_moves(@tictactoe)) || @tictactoe.draw?(p1_moves(@tictactoe),p2_moves(@tictactoe)) )
+      redirect_to tictacto_path(@tictactoe)
+    else
+      redirect_to edit_tictacto_path(@tictactoe) #have this part of an if statement, if winner,draw go here, else back to edit page, make constant val to curr board    
+    end
     # render :edit
   end
 

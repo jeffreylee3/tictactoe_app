@@ -2,18 +2,16 @@
   <h1>Show Page</h1>
 
 
-
-  <%= @tictactoe.id %>, <%= @tictactoe.squares %>
-  </br>
-
-  <% 9.times do |n| %>
-      <% @tictactoe.squares[n] = n %>
-  <% end %>
-
-  <%= @tictactoe.id %>, <%= @tictactoe.squares %>
-
-  </br>
-
-  <%= link_to "All games", tictactoes_path, class: "btn btn-large btn-primary" %>
+  <div class="row">
+    <div class="span4 offset1">
+      </br>
+      <%= render 'show' %>
+    </div>
+    <div class="span4 offset4">
+    	</br>
+      <%= render 'gameboard' %>
+      </br>
+    </div>
+  </div>
 
 </div>

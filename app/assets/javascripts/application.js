@@ -172,7 +172,8 @@ $(document).ready(function(){
  //   $("form").submit();
  // });  
 
-  $("button").click(function(){      
+  $(".reset").click(function(){      
+ // $("button").click(function(){      
     $("#tictactoe_squares_attributes_0_value").attr("value","");
     $("#tictactoe_squares_attributes_1_value").attr("value","");
     $("#tictactoe_squares_attributes_2_value").attr("value","");

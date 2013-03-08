@@ -42,7 +42,3 @@ class PlayersController < ApplicationController
   end
 end
 
-
-#
-# initalize two players
-#
