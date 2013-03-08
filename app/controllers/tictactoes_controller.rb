@@ -14,23 +14,22 @@ class TictactoesController < ApplicationController
 
   def create
     @tictactoe = Tictactoe.new      
+    #@tictactoe.save
+
+    # create tic tac toe squares, initialize index values for each square, 
+    # corresponds to game board location
+    9.times { @tictactoe.squares.build }
+    @tictactoe.squares.each_with_index { |square, index| square.num = index }
     @tictactoe.save
-    redirect_to new_tictacto_square_path(@tictactoe)
+    
+    redirect_to new_tictacto_player_path(@tictactoe)
   end
 
   def update
     @tictactoe = Tictactoe.find(params[:id])
     @tictactoe.update_attributes(params[:tictactoe]) #includes db save
-
-    if @tictactoe.players.count == 0
-      # set square index values here (0-8 for board square representation).
-      @tictactoe.squares.each_with_index { |square, index| square.num = index }
-      @tictactoe.save
-
-      redirect_to new_tictacto_player_path(@tictactoe)
-    else
-      redirect_to edit_tictacto_path(@tictactoe) #have this part of an if statement, if winner,draw go here, else back to edit page, make constant val to curr board
-    end
+    
+    redirect_to edit_tictacto_path(@tictactoe) #have this part of an if statement, if winner,draw go here, else back to edit page, make constant val to curr board    
     # render :edit
   end
 

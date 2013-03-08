@@ -5,7 +5,7 @@ TictactoeApp::Application.routes.draw do
   #resources :players
   
   resources :tictactoes do
-    resources :squares
+    #resources :squares
     resources :players
   end
 
