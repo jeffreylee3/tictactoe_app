@@ -6,7 +6,8 @@ class Tictactoe < ActiveRecord::Base
   accepts_nested_attributes_for :squares
   attr_accessible :squares_attributes
 
-
+  accepts_nested_attributes_for :players
+  attr_accessible :players_attributes
 
   def winner?(curr_player_moves)
     WINNING_MOVES.each { |winning_moves| return true if winning_moves & curr_player_moves == winning_moves }

@@ -1,16 +1,9 @@
-<%= form_for([@tictactoe, @player]) do |f| %>        
-        
-  <%= f.label :name %>  
-  <%= f.text_field :name %>
-
-  <%= f.label :mark %>  
-  <%= f.text_field :mark %>
-
-  <%= f.label :first_to_act %>  
-  <%= f.text_field :first_to_act %>  
-
+<%= form_for(@tictactoe) do |f| %>
+    <%= f.fields_for :players, @player do |p| %>
+      <%= p.label :name %>
+      <%= p.text_field :name %>      
+    <% end %>
   <%= f.submit "Create Player", class: "btn btn-large btn-primary" %>
-<% end %>
-
+<% end %>        
 
 

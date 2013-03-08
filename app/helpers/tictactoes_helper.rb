@@ -39,7 +39,7 @@ module TictactoesHelper
 
   #delete, used for test table
   def return_image2(square)
-    return "blank.jpg" if square == 0
+    return "blank.jpg" if square == 0 || square == nil
     return "x.jpg" if square == 1
     return "o.jpg" if square == 2
   end
