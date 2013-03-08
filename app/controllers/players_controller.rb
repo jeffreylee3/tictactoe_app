@@ -4,7 +4,7 @@ class PlayersController < ApplicationController
   def new
     @tictactoe = Tictactoe.find(params[:tictacto_id]) 
     #@player = @tictactoe.players.build
-    @players = Array.new(2) { @tictactoe.players.build }
+    2.times { @tictactoe.players.build }
   end
 
   def index
@@ -15,16 +15,15 @@ class PlayersController < ApplicationController
   	@player = Player.find(params[:id])
   end
 
+  #
+  # 
+  #
   def create
-    #@player = @tictactoe.players.build(params[:player])
-
-    #params[:players].each do |player|
-    #  @player = @tictactoe.players.build(player)
-    #  @player.save
-    #end
+    @player = @tictactoe.players.build(params[:player])
+    @player.save
     #@players = @tictactoe.players.create(params[:players])
 
-    #redirect_to edit_tictacto_path(@tictactoe)
+    redirect_to edit_tictacto_path(@tictactoe)
   end
 
   def edit

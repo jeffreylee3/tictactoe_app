@@ -1,9 +1,15 @@
-<%= form_for(@tictactoe) do |f| %>
-    <%= f.fields_for :players, @player do |p| %>
-      <%= p.label :name %>
-      <%= p.text_field :name %>      
-    <% end %>
-  <%= f.submit "Create Player", class: "btn btn-large btn-primary" %>
+<%= form_for @tictactoe do |f| %>
+  <p>
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </p>
+  <%= f.fields_for :players do |builder| %>
+    <p>
+      <%= builder.label :name, "Player" %><br />
+      <%= builder.text_field :name, :rows => 2 %>
+    </p>
+  <% end %>
+  <p><%= f.submit "Create Players", class: "btn btn-large btn-primary" %></p>
 <% end %>        
 
 

@@ -3,11 +3,11 @@ class Tictactoe < ActiveRecord::Base
   #serialize :squares # allows for array structure
   has_many :players, :order => 'id'
   has_many :squares, :order => 'num'
-  accepts_nested_attributes_for :squares
-  attr_accessible :squares_attributes
+  accepts_nested_attributes_for :squares #save attributes on assoc record through parent, need for nested forms
+  attr_accessible :squares_attributes  # enables mass assignment of squares attributes
 
   accepts_nested_attributes_for :players
-  attr_accessible :players_attributes
+  attr_accessible :players_attributes # enables mass assignment of players attributes
 
   def winner?(curr_player_moves)
     WINNING_MOVES.each { |winning_moves| return true if winning_moves & curr_player_moves == winning_moves }

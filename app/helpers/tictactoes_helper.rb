@@ -6,8 +6,10 @@ module TictactoesHelper
     p2_moves = Array.new
 
     tictactoe.squares.each do |n|
-      p1_moves << n.num if n.value == tictactoe.players[0].mark
-      p2_moves << n.num if n.value == tictactoe.players[1].mark
+      #p1_moves << n.num if n.value == tictactoe.players[0].mark
+      #p2_moves << n.num if n.value == tictactoe.players[1].mark
+      p1_moves << n.num if n.value == "X"
+      p2_moves << n.num if n.value == "O"
     end
     moves[0] = p1_moves.dup
     moves[1] = p2_moves.dup
@@ -16,19 +18,17 @@ module TictactoesHelper
 
 
   def turn(tictactoe_players, moves_avail)
-    #return tictactoe_players[0].name if moves_avail.length.odd? && tictactoe_players[0].first_to_act == "true"
-    #return tictactoe_players[1].name if moves_avail.length.odd? && tictactoe_players[1].first_to_act == "true"
-    #return tictactoe_players[0].name if moves_avail.length.even? && tictactoe_players[0].first_to_act == "false"
-    #return tictactoe_players[1].name if moves_avail.length.even? && tictactoe_players[1].first_to_act == "false"
+    return "Player 1" if moves_avail.length.odd?
+    return "Player 2" if moves_avail.length.even?
   
-    return "Player 1" if moves_avail.length.odd? && tictactoe_players[0].first_to_act == "true"
-    return "Player 2" if moves_avail.length.odd? && tictactoe_players[1].first_to_act == "true"
-    return "Player 1" if moves_avail.length.even? && tictactoe_players[0].first_to_act == "false"
-    return "Player 2" if moves_avail.length.even? && tictactoe_players[1].first_to_act == "false"
+    #return "Player 1" if moves_avail.length.odd? && tictactoe_players[0].first_to_act == "true"
+    #return "Player 2" if moves_avail.length.odd? && tictactoe_players[1].first_to_act == "true"
+    #return "Player 1" if moves_avail.length.even? && tictactoe_players[0].first_to_act == "false"
+    #return "Player 2" if moves_avail.length.even? && tictactoe_players[1].first_to_act == "false"
   end
 
   def return_image(tictactoe, num)
-    return "blank.jpg" if @tictactoe.squares[num].value == ""
+    return "blank.jpg" if @tictactoe.squares[num].value == "" || @tictactoe.squares[num].value == nil
     return "x.jpg" if @tictactoe.squares[num].value == "X"
     return "o.jpg" if @tictactoe.squares[num].value == "O"
   end

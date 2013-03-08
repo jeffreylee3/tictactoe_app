@@ -20,22 +20,23 @@ class TictactoesController < ApplicationController
 
   def update
     @tictactoe = Tictactoe.find(params[:id])
-    # no attributes for tictactoe DB, need to update differently
+    @tictactoe.update_attributes(params[:tictactoe]) #includes db save
 
-    #@tictactoe.squares.update_attributes(params[:square]) #includes db save (@tictactoe.save)
-    @tictactoe.update_attributes(params[:tictactoe]) #includes db save (@tictactoe.save)
-    redirect_to edit_tictacto_path(@tictactoe) #have this part of an if statement, if winner,draw go here, else back to edit page, make constant val to curr board
-  # render :edit
+    if @tictactoe.players.count == 0
+      # set square index values here (0-8 for board square representation).
+      @tictactoe.squares.each_with_index { |square, index| square.num = index }
+      @tictactoe.save
+
+      redirect_to new_tictacto_player_path(@tictactoe)
+    else
+      redirect_to edit_tictacto_path(@tictactoe) #have this part of an if statement, if winner,draw go here, else back to edit page, make constant val to curr board
+    end
+    # render :edit
   end
 
   def edit
     @tictactoe = Tictactoe.find(params[:id])
   end
 
-  private
-    def get_players
-      @players = []
-      #@players[0] = @tictactoe.players.collect() 
-    end
 
 end

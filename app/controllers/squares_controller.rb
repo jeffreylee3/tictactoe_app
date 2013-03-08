@@ -3,10 +3,13 @@ class SquaresController < ApplicationController
 
   def new
     @tictactoe = Tictactoe.find(params[:tictacto_id]) 
-  	@square = @tictactoe.squares.build
-
+  	#@square = @tictactoe.squares.build
+    9.times { @tictactoe.squares.build }
   end
 
+  #
+  # no longer needed, value is set throuh 
+  #
   def create
   	@square = @tictactoe.squares.build(params[:square])
   	@square.save
