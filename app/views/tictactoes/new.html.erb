@@ -7,7 +7,7 @@
       <p>Human vs CPU.</p>  
       <p>Think you got what it takes? </p>     
       </br>
-      <%= button_to "Start Game!", {:controller => :tictactoes, :action => :create}, :method => :post, :class => 'btn btn-large btn-primary' %>
+      <%= button_to "Start Game!", {:action => :create}, :method => :post, :class => 'btn btn-large btn-primary' %>
     </div>
     <div class="span4 offset1">
       <%= render 'emptyboard' %>
