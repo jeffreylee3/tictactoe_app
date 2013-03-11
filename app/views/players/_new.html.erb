@@ -1,14 +1,15 @@
 <%= form_for @tictactoe do |f| %>
-  <p>
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </p>
   <%= f.fields_for :players do |builder| %>
-    <p>
-      <%= builder.label :name, "Player" %><br />
-      <%= builder.text_field :name, :rows => 2 %>
-    </p>
+    <div class="row">
+      <div class="span2">
+        <%= builder.label :name, "Name:" , :class => 'player-name' %>
+      </div>
+      <div class="span2">
+        <%= builder.text_field :name, :class => 'player-input' %>
+      </div>
+    </div>
   <% end %>
+  </br>
   <p><%= f.submit "Create Players", class: "btn btn-large btn-primary" %></p>
 <% end %>        
 

@@ -16,6 +16,30 @@
 
 $(document).ready(function(){
   
+  if( $(".player-turn-marker").text() == "Player 1" )
+  {
+    $(".player-2-turn").hide();
+  }
+  if( $(".player-turn-marker").text() == "Player 2" )
+  {
+    $(".player-1-turn").hide();
+  }  
+
+  if( $(".player-winner-marker").text() == "Player 1" )
+  {
+    $(".player-2-winner").hide();
+    $(".player-no-winner").hide();
+  }
+  if( $(".player-winner-marker").text() == "Player 2" )
+  {
+    $(".player-1-winner").hide();
+    $(".player-no-winner").hide();    
+  }  
+  if( $(".player-winner-marker").text() == "Draw" )
+  {
+    $(".player-1-winner").hide();
+    $(".player-2-winner").hide();
+  }  
   //$("button").click(function(){
   //  $("p").hide();
   //});
@@ -37,7 +61,7 @@ $(document).ready(function(){
 
   // read whose turn it is from HTML and set value based on that
   $(".square0").click(function(){      
-    switch ($(".player_turn").text())
+    switch ($(".player-turn-marker").text())
     {
     case "Player 1":
       $("#tictactoe_squares_attributes_0_value").attr("value","X");
@@ -51,7 +75,7 @@ $(document).ready(function(){
   });
 
   $(".square1").click(function(){      
-    switch ($(".player_turn").text())
+    switch ($(".player-turn-marker").text())
     {
     case "Player 1":
       $("#tictactoe_squares_attributes_1_value").attr("value","X");
@@ -65,7 +89,7 @@ $(document).ready(function(){
   });
 
   $(".square2").click(function(){      
-    switch ($(".player_turn").text())
+    switch ($(".player-turn-marker").text())
     {
     case "Player 1":
       $("#tictactoe_squares_attributes_2_value").attr("value","X");
@@ -79,7 +103,7 @@ $(document).ready(function(){
   });
 
    $(".square3").click(function(){      
-    switch ($(".player_turn").text())
+    switch ($(".player-turn-marker").text())
     {
     case "Player 1":
       $("#tictactoe_squares_attributes_3_value").attr("value","X");
@@ -94,7 +118,7 @@ $(document).ready(function(){
   
 
   $(".square4").click(function(){      
-    switch ($(".player_turn").text())
+    switch ($(".player-turn-marker").text())
     {
     case "Player 1":
       $("#tictactoe_squares_attributes_4_value").attr("value","X");
@@ -108,7 +132,7 @@ $(document).ready(function(){
   });
 
   $(".square5").click(function(){      
-    switch ($(".player_turn").text())
+    switch ($(".player-turn-marker").text())
     {
     case "Player 1":
       $("#tictactoe_squares_attributes_5_value").attr("value","X");
@@ -122,7 +146,7 @@ $(document).ready(function(){
   });
 
   $(".square6").click(function(){      
-    switch ($(".player_turn").text())
+    switch ($(".player-turn-marker").text())
     {
     case "Player 1":
       $("#tictactoe_squares_attributes_6_value").attr("value","X");
@@ -136,7 +160,7 @@ $(document).ready(function(){
   });
 
   $(".square7").click(function(){      
-    switch ($(".player_turn").text())
+    switch ($(".player-turn-marker").text())
     {
     case "Player 1":
       $("#tictactoe_squares_attributes_7_value").attr("value","X");
@@ -150,7 +174,7 @@ $(document).ready(function(){
   });
 
   $(".square8").click(function(){      
-    switch ($(".player_turn").text())
+    switch ($(".player-turn-marker").text())
     {
     case "Player 1":
       $("#tictactoe_squares_attributes_8_value").attr("value","X");

@@ -29,9 +29,9 @@ module TictactoesHelper
   end
 
   def p_winner(tictactoe)
-    return "Congratulations, Player 1! You Win!!" if tictactoe.winner?(p1_moves(tictactoe))
-    return "Congratulations, Player 2! You Win!!" if tictactoe.winner?(p2_moves(tictactoe))
-    return "Game ends in a draw." if tictactoe.draw?(p1_moves(tictactoe),p2_moves(tictactoe))
+    return "Player 1" if tictactoe.winner?(p1_moves(tictactoe))
+    return "Player 2" if tictactoe.winner?(p2_moves(tictactoe))
+    return "Draw" if tictactoe.draw?(p1_moves(tictactoe),p2_moves(tictactoe))
   end
 
 

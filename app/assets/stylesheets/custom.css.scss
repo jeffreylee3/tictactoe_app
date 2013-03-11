@@ -27,8 +27,39 @@ textarea {
 }
 
 
-.table-bordered {
-  
+.player-input {
+  width: 80px;
+}
+
+.player-name {
+  text-align: right;
+  vertical-align: bottom;
+}
+
+.player-winner-marker {
+  color: white;
+  font-size: .1em;
+  line-height: .1em;
+}
+
+.player-turn-marker {
+  color: white;
+  font-size: .1em;
+  line-height: .1em;
+}
+
+.player-display {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;  
+}
+
+.table {
+
 }
 
 .table a {
@@ -54,7 +85,8 @@ h1 {
 h2 {
   font-size: 1.7em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
   font-weight: normal;
   color: #999;
@@ -62,5 +94,5 @@ h2 {
 
 p {
   font-size: 1.1em;
-  line-height: 1.7em;
+  line-height: 1.1em;
 }

@@ -1,21 +1,18 @@
-<div class="center hero-unit">
-  <h1>Welcome to Tic Tac Toe!</h1>
-
-
+<div class="center">  
   <div class="row">
+    <div class="span5 offset1">
+      <h1>Tic Tac Toe</h1>
+      <h2>Welcome!</h2>  
+      <p>A game of Tic Tac Toe.</p>
+      <p>Human vs CPU.</p>  
+      <p>Think you got what it takes? </p>     
+      </br>
+      <%= button_to "Start Game!", {:controller => :tictactoes, :action => :create}, :method => :post, :class => 'btn btn-large btn-primary' %>
+    </div>
     <div class="span4 offset1">
-      </br>
-      <%= form_for(@tictactoe) do |f| %>        
-	    <%= f.submit "Start Game!", class: "btn btn-large btn-primary" %>
-	    <% end %>
-
-      <%= link_to "Try This", {:action => :create}, :method => :post %>
+      <%= render 'emptyboard' %>
     </div>
-    <div class="span4 offset4">
-    	</br>
-      <%= render 'new' %>
-      </br>
-    </div>
+    <div class="span1">
+    </div>    
   </div>
-
 </div>
