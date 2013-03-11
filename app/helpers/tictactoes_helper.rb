@@ -23,9 +23,9 @@ module TictactoesHelper
   end
 
   def return_image(tictactoe, num)
-    return "blank.jpg" if @tictactoe.squares[num].value == "" || @tictactoe.squares[num].value == nil
-    return "x.jpg" if @tictactoe.squares[num].value == "X"
-    return "o.jpg" if @tictactoe.squares[num].value == "O"
+    return "blank.jpg" if tictactoe.squares[num].value == "" || tictactoe.squares[num].value == nil
+    return "x.jpg" if tictactoe.squares[num].value == "X"
+    return "o.jpg" if tictactoe.squares[num].value == "O"
   end
 
   def p_winner(tictactoe)
