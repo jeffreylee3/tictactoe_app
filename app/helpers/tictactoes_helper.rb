@@ -35,16 +35,13 @@ module TictactoesHelper
   end
 
 
-  # delete
-  def test(tictactoe, num)
-    tictactoe.squares[num].value = "X"
-  end
-
-  #delete, used for test table
-  def return_image2(square)
-    return "blank.jpg" if square == 0 || square == nil
-    return "x.jpg" if square == 1
-    return "o.jpg" if square == 2
+  def computer_move(tictactoe)
+    moves = [p1_moves(tictactoe),p2_moves(tictactoe)]
+    avail_moves = tictactoe.open_squares(p1_moves(tictactoe),p2_moves(tictactoe))
+    
+    node = Minimax.new moves, avail_moves
+    node.generate_tree(tictactoe)
+    return node.next_move.pop
   end
 
 

@@ -1,8 +1,8 @@
 <%= form_for @tictactoe do |f| %>
   <%= f.fields_for :players do |builder| %>
-    <div class="row">
+    <div class="row">      
       <div class="span2">
-        <%= builder.label :name, "Name:" , :class => 'player-name' %>
+        <%= builder.label :name, "Enter name:" , :class => 'player-name' %>
       </div>
       <div class="span2">
         <%= builder.text_field :name, :class => 'player-input' %>
@@ -10,7 +10,6 @@
     </div>
   <% end %>
   </br>
-  <p><%= f.submit "Create Players", class: "btn btn-large btn-primary" %></p>
+  <p><%= f.submit "Create Player", class: "btn btn-large btn-primary" %></p>
 <% end %>        
-
 
