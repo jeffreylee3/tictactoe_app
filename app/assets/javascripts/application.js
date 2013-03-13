@@ -33,48 +33,50 @@ $(document).ready(function(){
   }
   if( $(".player-turn-marker").text() == "Player 2" )
   {
-    $(".player-1-turn").hide();
-    
-    switch ($(".cpu-move-marker").text())
-    {
-    case "0":
-      $("#tictactoe_squares_attributes_0_value").attr("value","O");
-      $("form").submit();
-      break;
-    case "1":
-      $("#tictactoe_squares_attributes_1_value").attr("value","O");
-      $("form").submit();
-      break;
-    case "2":
-      $("#tictactoe_squares_attributes_2_value").attr("value","O");
-      $("form").submit();
-      break;
-    case "3":
-      $("#tictactoe_squares_attributes_3_value").attr("value","O");
-      $("form").submit();
-      break;
-    case "4":
-      $("#tictactoe_squares_attributes_4_value").attr("value","O");
-      $("form").submit();
-      break;
-    case "5":
-      $("#tictactoe_squares_attributes_5_value").attr("value","O");
-      $("form").submit();
-      break;
-    case "6":
-      $("#tictactoe_squares_attributes_6_value").attr("value","O");
-      $("form").submit();
-      break;
-    case "7":
-      $("#tictactoe_squares_attributes_7_value").attr("value","O");
-      $("form").submit();
-      break;
-    case "8":
-      $("#tictactoe_squares_attributes_8_value").attr("value","O");
-      $("form").submit();
-      break;                                    
-    }
-      
+    $(".player-1-turn").hide();  
+
+    setTimeout(function() {
+      switch ($(".cpu-move-marker").text())
+      {
+      case "0":
+        $("#tictactoe_squares_attributes_0_value").attr("value","O");
+        $("form").submit();
+        break;
+      case "1":
+        $("#tictactoe_squares_attributes_1_value").attr("value","O");
+        $("form").submit();
+        break;
+      case "2":
+        $("#tictactoe_squares_attributes_2_value").attr("value","O");
+        $("form").submit();
+        break;
+      case "3":
+        $("#tictactoe_squares_attributes_3_value").attr("value","O");
+        $("form").submit();
+        break;
+      case "4":
+        $("#tictactoe_squares_attributes_4_value").attr("value","O");
+        $("form").submit();
+        break;
+      case "5":
+        $("#tictactoe_squares_attributes_5_value").attr("value","O");
+        $("form").submit();
+        break;
+      case "6":
+        $("#tictactoe_squares_attributes_6_value").attr("value","O");
+        $("form").submit();
+        break;
+      case "7":
+        $("#tictactoe_squares_attributes_7_value").attr("value","O");
+        $("form").submit();
+        break;
+      case "8":
+        $("#tictactoe_squares_attributes_8_value").attr("value","O");
+        $("form").submit();
+        break;                                    
+      }
+    }, 2000);
+
   }  
   if( $(".player-winner-marker").text() == "Player 1" )
   {
