@@ -34,7 +34,7 @@ class Minimax
     elsif @depth == 6                                                         # limits tree depth to 6 moves ahead, no loss in selection performance, improves speed for beginning moves
       @avail_moves = []
       return @score
-    elsif @avail_moves.length == 8 && @depth == 1                             # When CPU is frist to act, first move is random (significantly speeds up game, all scores for depth 1 nodes are 0)
+    elsif @avail_moves.length == 8 && @depth == 1                             # When CPU is frist to act, first move is random (algorithm produces all 0 score values, significantly speeds up game)
       @avail_moves = []
       return @score         
     end
