@@ -1,8 +1,9 @@
 <% open_squares = @tictactoe.open_squares(p1_moves(@tictactoe),p2_moves(@tictactoe)) %>
 <h1>Tic Tac Toe</h1>
-<div class="player-turn-marker"><%= turn(@tictactoe.players, open_squares) %></div>
+<div class="player-turn-marker"><%= turn(@tictactoe, open_squares) %></div>
 <div class="player-1-turn player-display"><%= @tictactoe.players[0].name %>, select a square.</div>
 <div class="player-2-turn player-display"><%= @tictactoe.players[1].name %>, select a square.</div>
+</br>
 </br>
 <table class="table table-hover">
   <thead>
@@ -13,6 +14,15 @@
       <th>
         <div class="center">Mark</div>
       </th>
+      <th>
+        <div class="center">Win</div>
+      </th>
+      <th>
+        <div class="center">Lose</div>
+      </th>
+      <th>
+        <div class="center">Draw</div>
+      </th>                  
     </tr>
   </thead>
   <tbody>
@@ -27,6 +37,21 @@
           <%= image_tag "x.jpg", :size => "25x25" %>
         </div>
       </td>
+      <td>     
+        <div class="center">
+          <%= @tictactoe.players[0].win %>
+        </div>
+      </td>
+      <td>     
+        <div class="center">
+          <%= @tictactoe.players[0].lose %>
+        </div>
+      </td>
+      <td>     
+        <div class="center">
+          <%= @tictactoe.players[0].draw %>
+        </div>
+      </td>                  
     </tr>
     <tr>
       <td>
@@ -39,13 +64,27 @@
           <%= image_tag "o.jpg", :size => "25x25" %>
         </div>
       </td>
+      <td>
+        <div class="center">
+          <%= @tictactoe.players[1].win %>
+        </div>
+      </td>
+      <td>
+        <div class="center">
+          <%= @tictactoe.players[1].lose %>
+        </div>
+      </td>
+      <td>
+        <div class="center">
+          <%= @tictactoe.players[1].draw %>
+        </div>
+      </td>                  
     </tr>
   </tbody>
 </table>
 </br>
 
 <div class="cpu-move-marker"><%= computer_move(@tictactoe) %></div>
-</br>
-</br>
+
 
 

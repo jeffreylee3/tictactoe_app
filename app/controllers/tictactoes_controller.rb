@@ -36,7 +36,20 @@ class TictactoesController < ApplicationController
     # else
     # redirect to edit page
 
-    if (@tictactoe.winner?(p1_moves(@tictactoe)) || @tictactoe.winner?(p2_moves(@tictactoe)) || @tictactoe.draw?(p1_moves(@tictactoe),p2_moves(@tictactoe)) )
+    if @tictactoe.winner?(p1_moves(@tictactoe))
+      @tictactoe.players[0].win += 1
+      @tictactoe.players[1].lose += 1
+      @tictactoe.save
+      redirect_to tictacto_path(@tictactoe)
+    elsif @tictactoe.winner?(p2_moves(@tictactoe))
+      @tictactoe.players[0].lose += 1
+      @tictactoe.players[1].win += 1
+      @tictactoe.save
+      redirect_to tictacto_path(@tictactoe)
+    elsif @tictactoe.draw?(p1_moves(@tictactoe),p2_moves(@tictactoe))
+      @tictactoe.players[0].draw += 1
+      @tictactoe.players[1].draw += 1
+      @tictactoe.save      
       redirect_to tictacto_path(@tictactoe)
     else
       redirect_to edit_tictacto_path(@tictactoe) #have this part of an if statement, if winner,draw go here, else back to edit page, make constant val to curr board    

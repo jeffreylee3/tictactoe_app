@@ -16,6 +16,17 @@
 
 $(document).ready(function(){
   
+
+
+  $("#tictactoe_players_attributes_1_name").attr("value", "CPU");
+  $("#tictactoe_players_attributes_1_name").hide();
+
+  $("#tictactoe_players_attributes_1_first_to_act").hide();
+
+  $("label[for=tictactoe_players_attributes_1_first_to_act]").hide();
+
+
+
   if( $(".player-turn-marker").text() == "Player 1" )
   {
     $(".player-2-turn").hide();

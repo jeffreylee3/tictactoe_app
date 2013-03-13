@@ -12,9 +12,13 @@ module TictactoesHelper
     return p2_moves    
   end
 
-  def turn(tictactoe_players, moves_avail)
-    return "Player 1" if moves_avail.length.odd?
-    return "Player 2" if moves_avail.length.even?
+  def turn(tictactoe, moves_avail)
+    return "Player 1" if moves_avail.length.odd? && tictactoe.players[0].first_to_act == "true"
+    return "Player 2" if moves_avail.length.even? && tictactoe.players[0].first_to_act == "true"
+
+    return "Player 2" if moves_avail.length.odd? && tictactoe.players[0].first_to_act == "false"
+    return "Player 1" if moves_avail.length.even? && tictactoe.players[0].first_to_act == "false"
+    
   
     #return "Player 1" if moves_avail.length.odd? && tictactoe_players[0].first_to_act == "true"
     #return "Player 2" if moves_avail.length.odd? && tictactoe_players[1].first_to_act == "true"

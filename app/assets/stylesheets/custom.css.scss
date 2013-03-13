@@ -28,7 +28,7 @@ textarea {
 
 
 .player-input {
-  width: 80px;
+  width: 160px;
 }
 
 .player-name {
@@ -64,8 +64,10 @@ textarea {
   color: #999;  
 }
 
-.table {
-
+.check-box-label {
+  text-align: right;
+  margin-top: 3px;
+  color: #999;
 }
 
 .table a {
