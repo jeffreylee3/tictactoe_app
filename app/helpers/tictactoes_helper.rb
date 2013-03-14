@@ -12,18 +12,13 @@ module TictactoesHelper
     return p2_moves    
   end
 
-  def turn(tictactoe, moves_avail)
+  def turn(tictactoe)
+    moves_avail = @tictactoe.open_squares(p1_moves(@tictactoe),p2_moves(@tictactoe))
+
     return "Player 1" if moves_avail.length.odd? && tictactoe.players[0].first_to_act == "true"
     return "Player 2" if moves_avail.length.even? && tictactoe.players[0].first_to_act == "true"
-
     return "Player 2" if moves_avail.length.odd? && tictactoe.players[0].first_to_act == "false"
     return "Player 1" if moves_avail.length.even? && tictactoe.players[0].first_to_act == "false"
-    
-  
-    #return "Player 1" if moves_avail.length.odd? && tictactoe_players[0].first_to_act == "true"
-    #return "Player 2" if moves_avail.length.odd? && tictactoe_players[1].first_to_act == "true"
-    #return "Player 1" if moves_avail.length.even? && tictactoe_players[0].first_to_act == "false"
-    #return "Player 2" if moves_avail.length.even? && tictactoe_players[1].first_to_act == "false"
   end
 
   def return_image(tictactoe, num)
