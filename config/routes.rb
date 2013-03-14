@@ -1,12 +1,7 @@
 TictactoeApp::Application.routes.draw do
-
-
-  #resources :squares, only: [:new, :create]
-  #resources :players
   
-  resources :tictactoes do
-    #resources :squares
-    resources :players
+  resources :tictactoes, :except => :index do
+    resources :players, only: [:new]
   end
 
   root to: 'tictactoes#new'
