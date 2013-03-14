@@ -16,21 +16,68 @@
 
 $(document).ready(function(){
   
-
-
-  $("#tictactoe_players_attributes_1_name").attr("value", "CPU");
-  $("#tictactoe_players_attributes_1_name").hide();
-
-  $("#tictactoe_players_attributes_1_first_to_act").hide();
-
-  $("label[for=tictactoe_players_attributes_1_first_to_act]").hide();
-
-
-
+/*  
+  For TicTacToe Edit page 
+  If Player 1 turn.  Hide text display for Player 2. 
+  Set "X" value for square that Player 1 clicks on.
+*/
   if( $(".player-turn-marker").text() == "Player 1" )
   {
     $(".player-2-turn").hide();
+
+    $(".square0").click(function(){      
+      $("#tictactoe_squares_attributes_0_value").attr("value","X");
+      $("form").submit();
+    });     
+
+    $(".square1").click(function(){      
+      $("#tictactoe_squares_attributes_1_value").attr("value","X");
+      $("form").submit();
+    });  
+
+    $(".square2").click(function(){      
+      $("#tictactoe_squares_attributes_2_value").attr("value","X");
+      $("form").submit();
+    });  
+
+    $(".square3").click(function(){      
+      $("#tictactoe_squares_attributes_3_value").attr("value","X");
+      $("form").submit();
+    });  
+
+    $(".square4").click(function(){      
+      $("#tictactoe_squares_attributes_4_value").attr("value","X");
+      $("form").submit();
+    });  
+
+    $(".square5").click(function(){      
+      $("#tictactoe_squares_attributes_5_value").attr("value","X");
+      $("form").submit();
+    });  
+
+    $(".square6").click(function(){      
+      $("#tictactoe_squares_attributes_6_value").attr("value","X");
+      $("form").submit();
+    });  
+
+    $(".square7").click(function(){      
+      $("#tictactoe_squares_attributes_7_value").attr("value","X");
+      $("form").submit();
+    });                              
+
+    $(".square8").click(function(){      
+      $("#tictactoe_squares_attributes_8_value").attr("value","X");
+      $("form").submit();
+    });  
   }
+
+
+/*
+  For TicTacToe Edit page  
+  If Player 2 turn.  Hide text display for Player 1. 
+  Pause for a couple seconds.  Read text display
+  for CPU move value.  Set "O" value for that square.
+*/
   if( $(".player-turn-marker").text() == "Player 2" )
   {
     $(".player-1-turn").hide();  
@@ -76,8 +123,13 @@ $(document).ready(function(){
         break;                                    
       }
     }, 2000);
-
   }  
+
+
+/*  
+  For TicTacToe Show page
+  Display appropriate message based on win/lose/draw result
+*/
   if( $(".player-winner-marker").text() == "Player 1" )
   {
     $(".player-2-winner").hide();
@@ -93,164 +145,14 @@ $(document).ready(function(){
     $(".player-1-winner").hide();
     $(".player-2-winner").hide();
   }  
-  //$("button").click(function(){
-  //  $("p").hide();
-  //});
 
-  //$("img").click(function(){
-  //  $(this).hide();
-	//});
 
-  //$("button").click(function(){
-  //  $("form").submit();
-  //});  
-
-  //
-  // Comment out for now
-  //
-  //$("img").click(function(){
-  //  $("form").submit();
-  //}); 
-
-  // read whose turn it is from HTML and set value based on that
-  $(".square0").click(function(){      
-    switch ($(".player-turn-marker").text())
-    {
-    case "Player 1":
-      $("#tictactoe_squares_attributes_0_value").attr("value","X");
-      $("form").submit();
-      break;
-    case "Player 2":
-      $("#tictactoe_squares_attributes_0_value").attr("value","O");
-      $("form").submit();
-      break;
-    }  
-  });
-
-  $(".square1").click(function(){      
-    switch ($(".player-turn-marker").text())
-    {
-    case "Player 1":
-      $("#tictactoe_squares_attributes_1_value").attr("value","X");
-      $("form").submit();
-      break;
-    case "Player 2":
-      $("#tictactoe_squares_attributes_1_value").attr("value","O");
-      $("form").submit();
-      break;
-    }  
-  });
-
-  $(".square2").click(function(){      
-    switch ($(".player-turn-marker").text())
-    {
-    case "Player 1":
-      $("#tictactoe_squares_attributes_2_value").attr("value","X");
-      $("form").submit();
-      break;
-    case "Player 2":
-      $("#tictactoe_squares_attributes_2_value").attr("value","O");
-      $("form").submit();
-      break;
-    }  
-  });
-
-   $(".square3").click(function(){      
-    switch ($(".player-turn-marker").text())
-    {
-    case "Player 1":
-      $("#tictactoe_squares_attributes_3_value").attr("value","X");
-      $("form").submit();
-      break;
-    case "Player 2":
-      $("#tictactoe_squares_attributes_3_value").attr("value","O");
-      $("form").submit();
-      break;
-    }  
-  });
   
-
-  $(".square4").click(function(){      
-    switch ($(".player-turn-marker").text())
-    {
-    case "Player 1":
-      $("#tictactoe_squares_attributes_4_value").attr("value","X");
-      $("form").submit();
-      break;
-    case "Player 2":
-      $("#tictactoe_squares_attributes_4_value").attr("value","O");
-      $("form").submit();
-      break;
-    }  
-  });
-
-  $(".square5").click(function(){      
-    switch ($(".player-turn-marker").text())
-    {
-    case "Player 1":
-      $("#tictactoe_squares_attributes_5_value").attr("value","X");
-      $("form").submit();
-      break;
-    case "Player 2":
-      $("#tictactoe_squares_attributes_5_value").attr("value","O");
-      $("form").submit();
-      break;
-    }  
-  });
-
-  $(".square6").click(function(){      
-    switch ($(".player-turn-marker").text())
-    {
-    case "Player 1":
-      $("#tictactoe_squares_attributes_6_value").attr("value","X");
-      $("form").submit();
-      break;
-    case "Player 2":
-      $("#tictactoe_squares_attributes_6_value").attr("value","O");
-      $("form").submit();
-      break;
-    }  
-  });
-
-  $(".square7").click(function(){      
-    switch ($(".player-turn-marker").text())
-    {
-    case "Player 1":
-      $("#tictactoe_squares_attributes_7_value").attr("value","X");
-      $("form").submit();
-      break;
-    case "Player 2":
-      $("#tictactoe_squares_attributes_7_value").attr("value","O");
-      $("form").submit();
-      break;
-    }  
-  });
-
-  $(".square8").click(function(){      
-    switch ($(".player-turn-marker").text())
-    {
-    case "Player 1":
-      $("#tictactoe_squares_attributes_8_value").attr("value","X");
-      $("form").submit();
-      break;
-    case "Player 2":
-      $("#tictactoe_squares_attributes_8_value").attr("value","O");
-      $("form").submit();
-      break;
-    }  
-  });    
-
- // $(".square1").click(function(){  
- //   if($("img").attr("alt") == "Blank") 
- //   {
- //     if ($(".player_turn").text() == "Player 1") { $("#tictactoe_squares_attributes_4_value").attr("value","X"); }
- //     if ($(".player_turn").text() == "Player 2") { $("#tictactoe_squares_attributes_4_value").attr("value","O"); }
- //   }
- //   $("form").submit();
- // });  
-
-  $(".reset").click(function(){      
- // $("button").click(function(){      
+/*  
+  For TicTacToe Show page
+  Reset board values back to blank, to allow player to try again
+*/
+  $(".reset").click(function(){          
     $("#tictactoe_squares_attributes_0_value").attr("value","");
     $("#tictactoe_squares_attributes_1_value").attr("value","");
     $("#tictactoe_squares_attributes_2_value").attr("value","");
