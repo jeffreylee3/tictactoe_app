@@ -11,14 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313003318) do
+ActiveRecord::Schema.define(:version => 20130314151734) do
 
   create_table "players", :force => true do |t|
     t.string   "name"
     t.string   "mark"
     t.string   "cpu"
     t.string   "first_to_act"
-    t.string   "moves"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "tictactoe_id"
@@ -38,7 +37,6 @@ ActiveRecord::Schema.define(:version => 20130313003318) do
   create_table "tictactoes", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "squares"
   end
 
 end
