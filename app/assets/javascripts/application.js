@@ -19,55 +19,119 @@ $(document).ready(function(){
 /*  
   For TicTacToe Edit page 
   If Player 1 turn.  Hide text display for Player 2. 
-  Set "X" value for square that Player 1 clicks on.
+  If square is blank, then set "X" value for square 
+  that Player 1 clicks on.
 */
   if( $(".player-turn-marker").text() == "Player 1" )
   {
     $(".player-2-turn").hide();
 
-    $(".square0").click(function(){      
-      $("#tictactoe_squares_attributes_0_value").attr("value","X");
-      $("form").submit();
+    $(".square0").click(function(){         
+      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      {
+        $("#tictactoe_squares_attributes_0_value").attr("value","X");
+        $("form").submit();
+      }
+      else
+      {
+        alert("Please select a valid square.")
+      }
     });     
 
-    $(".square1").click(function(){      
-      $("#tictactoe_squares_attributes_1_value").attr("value","X");
-      $("form").submit();
+    $(".square1").click(function(){    
+      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      {
+        $("#tictactoe_squares_attributes_1_value").attr("value","X");
+        $("form").submit();
+      }
+      else
+      {
+        alert("Please select a valid square.")
+      }
     });  
 
-    $(".square2").click(function(){      
-      $("#tictactoe_squares_attributes_2_value").attr("value","X");
-      $("form").submit();
+    $(".square2").click(function(){   
+      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      {
+        $("#tictactoe_squares_attributes_2_value").attr("value","X");
+        $("form").submit();
+      }
+      else
+      {
+        alert("Please select a valid square.")
+      }       
     });  
 
-    $(".square3").click(function(){      
-      $("#tictactoe_squares_attributes_3_value").attr("value","X");
-      $("form").submit();
+    $(".square3").click(function(){  
+      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      {
+        $("#tictactoe_squares_attributes_3_value").attr("value","X");
+        $("form").submit();
+      }
+      else
+      {
+        alert("Please select a valid square.")
+      }          
     });  
 
-    $(".square4").click(function(){      
-      $("#tictactoe_squares_attributes_4_value").attr("value","X");
-      $("form").submit();
+    $(".square4").click(function(){  
+      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      {
+        $("#tictactoe_squares_attributes_4_value").attr("value","X");
+        $("form").submit();
+      }
+      else
+      {
+        alert("Please select a valid square.")
+      }  
     });  
 
-    $(".square5").click(function(){      
-      $("#tictactoe_squares_attributes_5_value").attr("value","X");
-      $("form").submit();
+    $(".square5").click(function(){   
+      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      {
+        $("#tictactoe_squares_attributes_5_value").attr("value","X");
+        $("form").submit();
+      }
+      else
+      {
+        alert("Please select a valid square.")
+      }        
     });  
 
-    $(".square6").click(function(){      
-      $("#tictactoe_squares_attributes_6_value").attr("value","X");
-      $("form").submit();
+    $(".square6").click(function(){   
+      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      {
+        $("#tictactoe_squares_attributes_6_value").attr("value","X");
+        $("form").submit();
+      }
+      else
+      {
+        alert("Please select a valid square.")
+      }          
     });  
 
-    $(".square7").click(function(){      
-      $("#tictactoe_squares_attributes_7_value").attr("value","X");
-      $("form").submit();
+    $(".square7").click(function(){     
+      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      {
+        $("#tictactoe_squares_attributes_7_value").attr("value","X");
+        $("form").submit();
+      }
+      else
+      {
+        alert("Please select a valid square.")
+      }        
     });                              
 
-    $(".square8").click(function(){      
-      $("#tictactoe_squares_attributes_8_value").attr("value","X");
-      $("form").submit();
+    $(".square8").click(function(){   
+      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      {
+        $("#tictactoe_squares_attributes_8_value").attr("value","X");
+        $("form").submit();
+      }
+      else
+      {
+        alert("Please select a valid square.")
+      }      
     });  
   }
 

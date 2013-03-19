@@ -43,5 +43,25 @@ module TictactoesHelper
     return node.next_move.pop
   end
 
+  def set_win_lose_draw(tictactoe, result)
+    if result == "win"
+      tictactoe.players[0].win += 1
+      tictactoe.players[1].lose += 1
+    elsif result == "lose"
+      tictactoe.players[0].lose += 1
+      tictactoe.players[1].win += 1
+    else
+      tictactoe.players[0].draw += 1
+      tictactoe.players[1].draw += 1
+    end
+  end
+
+  def set_first_to_act(tictactoe)
+    if tictactoe.players[0].first_to_act == "true"
+      tictactoe.players[0].first_to_act = "false"
+    else
+      tictactoe.players[0].first_to_act = "true"
+    end
+  end
 
 end
