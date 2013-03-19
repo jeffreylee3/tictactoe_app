@@ -13,8 +13,8 @@ jQuery -> $("#tictactoe_players_attributes_1_name").hide();
 
 ###
   For nested form on Players -> _new.html.erb.  Hide checkbox field and
-  label for Player 2.
+  label for Player 2.  NO LONGER NEEDED
 ###
-jQuery -> $("#tictactoe_players_attributes_1_first_to_act").hide();
-jQuery -> $("label[for=tictactoe_players_attributes_1_first_to_act]").hide();
+# jQuery -> $("#tictactoe_players_attributes_1_first_to_act").hide();
+# jQuery -> $("label[for=tictactoe_players_attributes_1_first_to_act]").hide();
 

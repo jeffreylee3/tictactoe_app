@@ -22,16 +22,31 @@ class TictactoesController < ApplicationController
     if @tictactoe.winner?(p1_moves(@tictactoe))
       @tictactoe.players[0].win += 1
       @tictactoe.players[1].lose += 1
+      if @tictactoe.players[0].first_to_act == "true"
+        @tictactoe.players[0].first_to_act = "false"
+      else
+        @tictactoe.players[0].first_to_act = "true"
+      end
       @tictactoe.save
       redirect_to tictacto_path(@tictactoe)
     elsif @tictactoe.winner?(p2_moves(@tictactoe))
       @tictactoe.players[0].lose += 1
       @tictactoe.players[1].win += 1
+      if @tictactoe.players[0].first_to_act == "true"
+        @tictactoe.players[0].first_to_act = "false"
+      else
+        @tictactoe.players[0].first_to_act = "true"
+      end
       @tictactoe.save
       redirect_to tictacto_path(@tictactoe)
     elsif @tictactoe.draw?(p1_moves(@tictactoe),p2_moves(@tictactoe))
       @tictactoe.players[0].draw += 1
       @tictactoe.players[1].draw += 1
+      if @tictactoe.players[0].first_to_act == "true"
+        @tictactoe.players[0].first_to_act = "false"
+      else
+        @tictactoe.players[0].first_to_act = "true"
+      end
       @tictactoe.save      
       redirect_to tictacto_path(@tictactoe)
     else
