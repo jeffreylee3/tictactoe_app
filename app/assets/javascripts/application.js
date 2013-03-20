@@ -27,7 +27,7 @@ $(document).ready(function(){
     $(".player-2-turn").hide();
 
     $(".square0").click(function(){         
-      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      if ( $(this).find('img').attr('alt') == "Blank")
       {
         $("#tictactoe_squares_attributes_0_value").attr("value","X");
         $("form").submit();
@@ -39,7 +39,7 @@ $(document).ready(function(){
     });     
 
     $(".square1").click(function(){    
-      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      if ( $(this).find('img').attr('alt') == "Blank")
       {
         $("#tictactoe_squares_attributes_1_value").attr("value","X");
         $("form").submit();
@@ -51,7 +51,7 @@ $(document).ready(function(){
     });  
 
     $(".square2").click(function(){   
-      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      if ( $(this).find('img').attr('alt') == "Blank")
       {
         $("#tictactoe_squares_attributes_2_value").attr("value","X");
         $("form").submit();
@@ -63,7 +63,7 @@ $(document).ready(function(){
     });  
 
     $(".square3").click(function(){  
-      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      if ( $(this).find('img').attr('alt') == "Blank")
       {
         $("#tictactoe_squares_attributes_3_value").attr("value","X");
         $("form").submit();
@@ -75,7 +75,7 @@ $(document).ready(function(){
     });  
 
     $(".square4").click(function(){  
-      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      if ( $(this).find('img').attr('alt') == "Blank")
       {
         $("#tictactoe_squares_attributes_4_value").attr("value","X");
         $("form").submit();
@@ -87,7 +87,7 @@ $(document).ready(function(){
     });  
 
     $(".square5").click(function(){   
-      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      if ( $(this).find('img').attr('alt') == "Blank")
       {
         $("#tictactoe_squares_attributes_5_value").attr("value","X");
         $("form").submit();
@@ -99,7 +99,7 @@ $(document).ready(function(){
     });  
 
     $(".square6").click(function(){   
-      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      if ( $(this).find('img').attr('alt') == "Blank")
       {
         $("#tictactoe_squares_attributes_6_value").attr("value","X");
         $("form").submit();
@@ -111,7 +111,7 @@ $(document).ready(function(){
     });  
 
     $(".square7").click(function(){     
-      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      if ( $(this).find('img').attr('alt') == "Blank")
       {
         $("#tictactoe_squares_attributes_7_value").attr("value","X");
         $("form").submit();
@@ -123,7 +123,7 @@ $(document).ready(function(){
     });                              
 
     $(".square8").click(function(){   
-      if ( $(this).find('img').attr('src') == "/assets/blank.jpg")
+      if ( $(this).find('img').attr('alt') == "Blank")
       {
         $("#tictactoe_squares_attributes_8_value").attr("value","X");
         $("form").submit();
