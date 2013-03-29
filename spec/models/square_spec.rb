@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Square do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before { @square = Square.new(num: 0, value: "O") }
+  subject { @square }
+
+  it { should respond_to(:num) }
+  it { should respond_to(:value) }
+
+  it { should be_valid }
 end
