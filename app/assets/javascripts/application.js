@@ -215,6 +215,7 @@ $(document).ready(function(){
 /*  
   For TicTacToe Show page
   Reset board values back to blank, to allow player to try again
+  when "try again" button is clicked on.
 */
   $(".reset").click(function(){          
     $("#tictactoe_squares_attributes_0_value").attr("value","");
