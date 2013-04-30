@@ -55,7 +55,7 @@ module TictactoesHelper
 
 
   #
-  # generates computer move value.  creates a minimax object and calls generate_tree
+  # generates computer move value.  creates a minimax object and calls create_minimax_tree
   # on that object.  File for class definition is located at /lib/minimax.rb
   #
   def computer_move(tictactoe)
@@ -63,8 +63,8 @@ module TictactoesHelper
     avail_moves = tictactoe.open_squares(p1_moves(tictactoe),p2_moves(tictactoe))
     
     node = Minimax.new moves, avail_moves
-    node.generate_tree(tictactoe)
-    return node.next_move.pop
+    node.create_minimax_tree(tictactoe)
+    return node.select_computer_move.pop
   end
 
 
