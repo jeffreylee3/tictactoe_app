@@ -6,6 +6,7 @@ describe Square do
 
   it { should respond_to(:num) }
   it { should respond_to(:value) }
+  it { should respond_to(:tictactoe_id) }
 
   it { should be_valid }
 end

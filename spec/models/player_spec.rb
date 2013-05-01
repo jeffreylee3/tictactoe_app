@@ -9,7 +9,8 @@ describe Player do
   it { should respond_to(:win) }
   it { should respond_to(:lose) }
   it { should respond_to(:draw) }
-
+  it { should respond_to(:tictactoe_id) }
+  
   it { should be_valid }
 
   describe "when name is not present" do
