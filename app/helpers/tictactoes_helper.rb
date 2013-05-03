@@ -95,4 +95,25 @@ module TictactoesHelper
       tictactoe.players[0].first_to_act = "true"
     end
   end
+
+  #
+  # create and initalize game sqaures for gameboard
+  #
+  def create_game_squares(tictactoe)
+    9.times { tictactoe.squares.build }
+    tictactoe.squares.each_with_index { |square, index| square.num = index }
+    tictactoe.save    
+  end
+
+  #
+  # set win lose draw stats for game players
+  #
+  def set_game_stats(tictactoe)
+    set_win_lose_draw(tictactoe,"win") if @tictactoe.winner?(p1_moves(tictactoe))                                                                                                           
+    set_win_lose_draw(tictactoe,"lose") if @tictactoe.winner?(p2_moves(tictactoe))                                        
+    set_win_lose_draw(tictactoe,"draw") if @tictactoe.draw?(p1_moves(tictactoe),p2_moves(tictactoe))                                       
+    set_first_to_act(tictactoe)                                               
+    tictactoe.save 
+  end
+
 end

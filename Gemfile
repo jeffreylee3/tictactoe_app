@@ -4,12 +4,14 @@ gem 'rails', '3.2.12'
 gem 'bootstrap-sass', '2.1'
 gem 'pg', '0.12.2'
 gem 'newrelic_rpm'
+gem 'jquery-rails', '2.0.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
   gem 'rspec-rails', '2.11.0'
+
 end
 
 # Gems used only for assets and not required
@@ -21,16 +23,16 @@ group :assets do
   gem 'uglifier', '1.2.3'
 end  
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-
-gem 'jquery-rails', '2.0.2'
 
 group :test do
   gem 'capybara', '1.1.2'
-  gem 'factory_girl_rails', '4.1.0'  
+  gem 'factory_girl_rails', '4.1.0'   
+  gem 'cucumber-rails', '1.3.1'
+  gem 'database_cleaner', '0.7.2'
 end
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', :platforms => :ruby
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
